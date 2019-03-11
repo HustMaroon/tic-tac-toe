@@ -21,7 +21,7 @@ class Game
   end
 
   def game_over?
-    return true if board.row_exist
+    return board.row_exist if board.row_exist
 
     board.fulfilled?
   end

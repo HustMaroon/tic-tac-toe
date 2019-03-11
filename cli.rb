@@ -15,9 +15,9 @@ class Cli
     if opt.to_i == 1
       option = 0
       loop do
-        p 'enter number of rows (<100)'
+        p 'enter number of rows (<10)'
         option = gets.chomp.to_i
-        break if option >= 3 && option <= 99
+        break if option >= 3 && option <= 9
       end
       p 'start game'
       start_game(option)
@@ -35,7 +35,7 @@ class Cli
         print_menu
         break
       else
-        p game.turn == 1 ? "#{Board::Mark::X}'s turn:" : "#{Board::Mark::O}'s turn:"
+        p game.turn == 1 ? "#{Board::Mark::O}'s turn:" : "#{Board::Mark::X}'s turn:"
         opt = gets.chomp.to_s
         loop do
           break if valid_mark?(game, opt)
